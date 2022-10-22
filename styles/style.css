@@ -1,12 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
+.my-burger {
+  z-index: 100;
+  display: none;
+  width: auto;
+  height: auto;
+}
+
+.my-burger::after,
+.my-burger::before {
+  border-radius: 10px;
+  right: 5%;
+  content: "";
+  background-color: #ff7400;
+  width: 30px;
+  height: 3px;
+  transition: all 0.2s linear;
+}
+
+.my-burger span {
+  border-radius: 10px;
+  background-color: #ff7400;
+  position: absolute;
+  right: 5%;
+  top: 47.5%;
+  width: 30px;
+  height: 3px;
+  opacity: 1;
+  transition: all 0.2s linear;
+}
+
+.my-burger::before {
+  position: absolute;
+  top: 35%;
+}
+
+.my-burger::after {
+  position: absolute;
+  bottom: 35%;
+}
+
+.my-burger.active span {
+  width: 0;
+  opacity: 0;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+.my-burger.active::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+.my-burger.active::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
+  min-height: 100vh;
+  overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   padding: 0;
   margin: 0;
@@ -48,6 +108,10 @@ input[type=button]:hover {
   display: flex;
 }
 .container1 header .wrapper {
+  margin-right: 320px;
+}
+.container1 header .wrapper,
+.container1 header ._wrapper {
   display: flex;
   align-items: center;
   height: 100%;
@@ -103,7 +167,7 @@ input[type=button]:hover {
   position: relative;
 }
 .welcome input {
-  margin: 5% 43%;
+  margin: 5% 46%;
 }
 .welcome * {
   text-align: center;
@@ -131,8 +195,8 @@ input[type=button]:hover {
   text-transform: uppercase;
 }
 .welcome h3::before {
-  left: 210px;
-  top: 12px;
+  left: 27%;
+  top: 50%;
   position: absolute;
   content: "";
   display: block;
@@ -141,8 +205,8 @@ input[type=button]:hover {
   background-color: #fff;
 }
 .welcome h3::after {
-  left: 495px;
-  top: 12px;
+  left: 66%;
+  top: 50%;
   position: absolute;
   content: "";
   display: block;
@@ -154,7 +218,7 @@ input[type=button]:hover {
 .comments-blocks {
   margin: auto;
   margin-top: -100px;
-  max-width: 70%;
+  max-width: 80%;
   display: flex;
   justify-content: space-around;
 }
@@ -191,11 +255,12 @@ input[type=button]:hover {
 }
 
 .history-block {
+  position: relative;
   margin: 0 auto;
   margin-top: 150px;
   display: flex;
   justify-content: space-around;
-  max-width: 80%;
+  max-width: 100%;
   height: 800px;
 }
 .history-block .text {
@@ -230,6 +295,11 @@ input[type=button]:hover {
   font-size: 20px;
   line-height: 27px;
   color: #000000;
+}
+.history-block .gallery {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 .history-block .gallery img {
   position: relative;
@@ -387,4 +457,180 @@ input[type=button]:hover {
   width: 300px;
   height: 2px;
   border: 1px dashed rgb(0, 0, 0);
+}
+
+@media (max-width: 1200px) {
+  .container1 {
+    position: relative;
+    min-width: 100vw;
+    background-position: 38%;
+    background-size: auto;
+  }
+  .container1 .my-burger {
+    display: block;
+  }
+  .container1 header .logo {
+    position: absolute;
+    left: 5%;
+    top: 1%;
+  }
+  .container1 header ul {
+    padding-top: 100px;
+    height: 425px;
+    border: none;
+  }
+  .container1 header ul li {
+    transition: all 0.1s ease;
+    padding: 5%;
+    width: 100%;
+  }
+  .container1 header ul li a {
+    font-size: 18px;
+  }
+  .container1 header ul li a img {
+    width: 38px !important;
+  }
+  .container1 header ul li:active {
+    background-color: #ff7400;
+  }
+  .container1 header ul li:active a {
+    color: #000000;
+  }
+  .container1 header .wrapper {
+    flex-direction: column;
+    margin-right: 0px !important;
+  }
+  .container1 header .wrapper * {
+    flex-direction: column;
+  }
+  .container1 header ._wrapper {
+    flex-direction: column;
+    align-content: space-around;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.9333333333);
+    transform: translateX(0%);
+    position: fixed;
+    right: -400px;
+    top: 0;
+    min-height: 100vh;
+    transition: all 0.5s ease-in-out;
+  }
+  .container1 header ._wrapper .telephon {
+    position: relative;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    bottom: -400px;
+    transform: scale(1.2);
+  }
+  .container1 header ._wrapper input {
+    padding: 20px 30px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 25%;
+  }
+  .container1 header ._wrapper.slide {
+    transform: translateX(-100%);
+  }
+  .welcome {
+    left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome h2 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .welcome h1 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  .welcome h3 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .welcome h3::after {
+    display: none;
+  }
+  .welcome h3::before {
+    display: none;
+  }
+  .comments-blocks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .comments-blocks .block {
+    margin: 15px 0;
+  }
+  .history-block {
+    width: 100vw;
+    height: 100% !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .history-block .text {
+    position: relative;
+    margin: 0;
+    width: 80vw !important;
+  }
+  .history-block .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .history-block img {
+    top: auto !important;
+    left: auto !important;
+    margin: 25px 0;
+    box-shadow: 0px -1px 26px 8px rgba(0, 0, 0, 0.45);
+  }
+  .table-reserve {
+    background-size: auto;
+  }
+  .table-reserve .reserve-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dishes {
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .dishes > img {
+    width: 750px;
+  }
+  .dishes .dish-wrapper {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  .dishes .dish-wrapper .small-photos img {
+    min-width: 170px;
+    margin: 45px 0;
+  }
+  .dishes .dish-wrapper .prices ul {
+    width: 200px;
+  }
+  .dishes .dish-wrapper .prices ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .dishes .dish-wrapper .prices ul li p {
+    font-size: 22px;
+    line-height: 25px;
+  }
+  .dishes .dish-wrapper .prices ul li h2 {
+    text-align: left;
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .dishes .dish-wrapper .prices ul li h2::after {
+    display: none;
+  }
+  .dishes .dish-wrapper .prices ul li:nth-child(2) {
+    margin: 180px 0;
+  }
 }/*# sourceMappingURL=style.css.map */

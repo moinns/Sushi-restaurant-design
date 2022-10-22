@@ -6,13 +6,72 @@ $secondary-color: #d67e34;
 $cup-color: #bc9060;
 $text-color: #656363;
 
+.my-burger {
+  z-index: 100;
+
+  display: none;
+  width: auto;
+  height: auto;
+}
+
+.my-burger::after,
+.my-burger::before {
+  border-radius: 10px;
+  right: 5%;
+  content: '';
+  background-color: $main-color;
+  width: 30px;
+  height: 3px;
+
+  transition: all 0.2s linear;
+}
+.my-burger span {
+  border-radius: 10px;
+
+  background-color: $main-color;
+  position: absolute;
+  right: 5%;
+  top: 47.5%;
+  width: 30px;
+  height: 3px;
+  opacity: 1;
+
+  transition: all 0.2s linear;
+}
+.my-burger::before {
+  position: absolute;
+  top: 35%;
+}
+.my-burger::after {
+  position: absolute;
+  bottom: 35%;
+}
+
+.my-burger.active span {
+  width: 0;
+  opacity: 0;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.my-burger.active::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.my-burger.active::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
+  min-height: 100vh;
+  overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
@@ -58,6 +117,11 @@ input[type='button']:hover {
     display: flex;
 
     .wrapper {
+      margin-right: 320px;
+    }
+
+    .wrapper,
+    ._wrapper {
       display: flex;
       align-items: center;
       height: 100%;
@@ -126,7 +190,7 @@ input[type='button']:hover {
   position: relative;
 
   input {
-    margin: 5% 43%;
+    margin: 5% 46%;
   }
 
   * {
@@ -157,8 +221,8 @@ input[type='button']:hover {
     text-transform: uppercase;
 
     &::before {
-      left: 210px;
-      top: 12px;
+      left: 27%;
+      top: 50%;
       position: absolute;
       content: '';
       display: block;
@@ -167,8 +231,8 @@ input[type='button']:hover {
       background-color: #fff;
     }
     &::after {
-      left: 495px;
-      top: 12px;
+      left: 66%;
+      top: 50%;
       position: absolute;
       content: '';
       display: block;
@@ -182,7 +246,7 @@ input[type='button']:hover {
 .comments-blocks {
   margin: auto;
   margin-top: -100px;
-  max-width: 70%;
+  max-width: 80%;
 
   display: flex;
   justify-content: space-around;
@@ -228,12 +292,13 @@ input[type='button']:hover {
 }
 
 .history-block {
+  position: relative;
   margin: 0 auto;
   margin-top: 150px;
 
   display: flex;
   justify-content: space-around;
-  max-width: 80%;
+  max-width: 100%;
   height: 800px;
   .text {
     margin-left: 100px;
@@ -271,6 +336,7 @@ input[type='button']:hover {
     }
   }
   .gallery {
+    min-width: fit-content;
     img {
       position: relative;
 
@@ -445,6 +511,190 @@ input[type='button']:hover {
               width: 300px;
               height: 2px;
               border: 1px dashed rgb(0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container1 {
+    position: relative;
+    min-width: 100vw;
+    background-position: 38%;
+    background-size: auto;
+    .my-burger {
+      display: block;
+    }
+    header {
+      .logo {
+        position: absolute;
+        left: 5%;
+        top: 1%;
+      }
+      ul {
+        padding-top: 100px;
+        height: 425px;
+        border: none;
+        li {
+          transition: all 0.1s ease;
+          a {
+            font-size: 18px;
+            img {
+              width: 38px !important;
+            }
+          }
+          padding: 5%;
+          width: 100%;
+          &:active {
+            background-color: $main-color;
+            a {
+              color: #000000;
+            }
+          }
+        }
+      }
+      & .wrapper {
+        flex-direction: column;
+        margin-right: 0px !important;
+        * {
+          flex-direction: column;
+        }
+      }
+      ._wrapper {
+        flex-direction: column;
+        align-content: space-around;
+
+        z-index: 3;
+        background-color: #000000ee;
+        transform: translateX(0%);
+
+        position: fixed;
+        right: -400px;
+        top: 0;
+
+        min-height: 100vh;
+        transition: all 0.5s ease-in-out;
+        .telephon {
+          position: relative;
+          height: fit-content;
+          bottom: -400px;
+          transform: scale(1.2);
+        }
+        input {
+          padding: 20px 30px;
+          font-size: 18px;
+          position: absolute;
+          bottom: 25%;
+        }
+        &.slide {
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+  .welcome {
+    left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 30px;
+      line-height: 34px;
+    }
+    h1 {
+      font-size: 40px;
+      line-height: 46px;
+    }
+    h3 {
+      font-size: 15px;
+      line-height: 20px;
+      &::after {
+        display: none;
+      }
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .comments-blocks {
+    flex-direction: column;
+    align-items: center;
+    .block {
+      margin: 15px 0;
+    }
+  }
+  .history-block {
+    width: 100vw;
+    height: 100% !important;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      position: relative;
+      margin: 0;
+      width: 80vw !important;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      top: auto !important;
+      left: auto !important;
+      margin: 25px 0;
+      box-shadow: 0px -1px 26px 8px rgba(0, 0, 0, 0.45);
+    }
+  }
+  .table-reserve {
+    background-size: auto;
+    .reserve-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .dishes {
+    max-width: 100%;
+    flex-direction: column;
+    > img {
+      width: 750px;
+    }
+    .dish-wrapper {
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      .small-photos {
+        img {
+          min-width: 170px;
+          margin: 45px 0;
+        }
+      }
+      .prices {
+        ul {
+          width: 200px;
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            p {
+              font-size: 22px;
+              line-height: 25px;
+            }
+            h2 {
+              text-align: left;
+              font-size: 26px;
+              line-height: 30px;
+              &::after {
+                display: none;
+              }
+            }
+            &:nth-child(2) {
+              margin: 180px 0;
             }
           }
         }

@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="./fav-ico.ico" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -17,7 +20,6 @@
     />
     <title>Sushi Restaurant</title>
   </head>
-
   <body>
     <div class="container1">
       <header>
@@ -28,36 +30,41 @@
             alt=""
             style="width: 80px; height: auto"
         /></a>
-        <div class="wrapper">
-          <ul>
-            <li><a href="">Головна</a></li>
-            <li><a href="">Меню</a></li>
-            <li><a href="">Про нас</a></li>
-            <li><a href="">Бронювання</a></li>
-            <a href=""
-              ><img
-                src="./public/cart.svg"
-                alt=""
-                style="width: 21.98px; height: auto"
-            /></a>
-          </ul>
-          <div class="telephon">
-            <h2>
-              <i class="material-symbols-outlined">
-                phone_in_talk_watchface_indicator
-              </i>
-              +(38)050-782-38-72
-            </h2>
-            <p>Зв'яжться з нами для бронювання</p>
+        <div class="my-burger"><span></span></div>
+        <div class="_wrapper">
+          <div class="wrapper">
+            <ul>
+              <li><a href="">Головна</a></li>
+              <li><a href="">Меню</a></li>
+              <li><a href="">Про нас</a></li>
+              <li><a href="">Бронювання</a></li>
+              <li>
+                <a href=""
+                  ><img
+                    src="./public/cart.svg"
+                    alt=""
+                    style="width: 21.98px; height: auto"
+                /></a>
+              </li>
+            </ul>
+            <div class="telephon">
+              <h2>
+                <i class="material-symbols-outlined">
+                  phone_in_talk_watchface_indicator
+                </i>
+                +(38)050-782-38-72
+              </h2>
+              <p>Зв'яжться з нами для бронювання</p>
+            </div>
           </div>
+          <input type="button" value="ЗАКАЗ СТОЛИКА" />
         </div>
-        <input type="button" value="ЗАКАЗ СТОЛИКА" />
       </header>
       <div class="welcome">
         <h2>Ласково просимо в</h2>
         <h1>Наш ресторан</h1>
         <h3>Дім найкращої кухні</h3>
-        <input type="button" value="VIEW MENU" />
+        <input type="button" value="MENU" />
       </div>
     </div>
     <div
@@ -153,13 +160,13 @@
       <div uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300">
         <h1>Наші <b>Страви</b></h1>
       </div>
+      <img
+        uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300"
+        class="big-photo"
+        src="./public/pizza.png"
+        alt=""
+      />
       <div class="dish-wrapper">
-        <img
-          uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300"
-          class="big-photo"
-          src="./public/pizza.png"
-          alt=""
-        />
         <div
           class="small-photos"
           uk-scrollspy="target: img; cls: uk-animation-slide-bottom-medium; delay: 400"
