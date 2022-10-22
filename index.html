@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css"
+    />
+    <title>Sushi Restaurant</title>
+  </head>
+
+  <body>
+    <div class="container1">
+      <header>
+        <a href=""
+          ><img
+            src="/public/LOGO.svg"
+            class="logo"
+            alt=""
+            style="width: 80px; height: auto"
+        /></a>
+        <div class="wrapper">
+          <ul>
+            <li><a href="">Головна</a></li>
+            <li><a href="">Меню</a></li>
+            <li><a href="">Про нас</a></li>
+            <li><a href="">Бронювання</a></li>
+            <a href=""
+              ><img
+                src="/public/cart.svg"
+                alt=""
+                style="width: 21.98px; height: auto"
+            /></a>
+          </ul>
+          <div class="telephon">
+            <h2>
+              <i class="material-symbols-outlined">
+                phone_in_talk_watchface_indicator
+              </i>
+              +(38)050-782-38-72
+            </h2>
+            <p>Зв'яжться з нами для бронювання</p>
+          </div>
+        </div>
+        <input type="button" value="ЗАКАЗ СТОЛИКА" />
+      </header>
+      <div class="welcome">
+        <h2>Ласково просимо в</h2>
+        <h1>Наш ресторан</h1>
+        <h3>Дім найкращої кухні</h3>
+        <input type="button" value="VIEW MENU" />
+      </div>
+    </div>
+    <div
+      uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200"
+      class="comments-blocks"
+    >
+      <div class="block">
+        <img src="/public/cup.svg" alt="" />
+        <h3>Магічна <b>Атмосфера</b></h3>
+        <p>
+          Чарівна атмосфера панує в нашому закладі Наповнений смачними ароматами
+        </p>
+      </div>
+      <div class="block">
+        <img src="/public/cup.svg" alt="" />
+        <h3>Найкраща якість <b>Їжі</b></h3>
+        <p>Якість нашої Їжі - відмінна!</p>
+      </div>
+      <div class="block">
+        <img src="/public/cup.svg" alt="" />
+        <h3>Недорога <b>Їжа</b></h3>
+        <p>
+          Вартість нашої їжі залежить лише від її кількості. Якість завжди
+          нависоті!
+        </p>
+      </div>
+    </div>
+    <div
+      uk-scrollspy="target:  .text>*; cls: uk-animation-scale-down; delay: 200"
+      class="history-block"
+    >
+      <div class="text">
+        <h1>Наша <b>Історія</b></h1>
+        <p>
+          Як і будь яке інше оригінальне місце, у нас є власна, спеціальна
+          історія. Ідея ресторану прийшла до засновників несподівано. Під час
+          прогулянки лісом творць нашого ресторану застряг за сотні кілометрів
+          від найближчого села. Далеко від цивілізації та комунікацій їм
+          довелося створити для себе умови проживання, витягувати та приготувати
+          їжу для себе.
+        </p>
+        <div class="counter">
+          <div>
+            <h1>92</h1>
+            <p>Напої</p>
+          </div>
+          <div>
+            <h1>206</h1>
+            <p>Їжа</p>
+          </div>
+          <div>
+            <h1>77</h1>
+            <p>Закуски</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <img
+          uk-scrollspy="cls: uk-animation-slide-left-medium, uk-animation-fade; delay: 900"
+          class="img1"
+          src="/public/img1.png"
+          alt=""
+        />
+        <img
+          uk-scrollspy="cls: uk-animation-slide-top-medium, uk-animation-fade; ; delay: 1500"
+          class="img2"
+          src="/public/img2.png"
+          alt=""
+        />
+        <img
+          uk-scrollspy="cls: uk-animation-slide-right-medium, uk-animation-fade; delay: 2100"
+          class="img3"
+          src="/public/img3.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div
+      class="animation-wrap"
+      uk-scrollspy="target: div; cls: uk-animation-slide-bottom-medium; delay: 300"
+    >
+      <div class="table-reserve">
+        <div class="reserve-wrapper">
+          <div class="text-wrap">
+            <h1>Відсвяткуйте в одному із самих кращих ресторанів.</h1>
+            <p>Тільки цього місяця бізнес ланч від 99 грн</p>
+          </div>
+          <input type="button" value="ЗАКАЗ СТОЛИКА" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="dishes"
+      uk-scrollspy="target: div; cls: uk-animation-slide-bottom-medium; delay: 300"
+    >
+      <h1>Наші <b>Страви</b></h1>
+      <div class="dish-wrapper">
+        <img class="big-pgoto" src="./public/pizza.png" alt="" />
+        <div class="small-photos">
+          <img src="./public/burger.png" alt="" />
+          <img src="./public/burger.png" alt="" />
+          <img src="./public/burger.png" alt="" />
+        </div>
+        <div class="prices">
+          <ul>
+            <li>
+              <p>Міні Гамбургер</p>
+              <h2>99 грн</h2>
+            </li>
+            <li>
+              <p>Міні Гамбургер</p>
+              <h2>99 грн</h2>
+            </li>
+            <li>
+              <p>Міні Гамбургер</p>
+              <h2>99 грн</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+</html>
