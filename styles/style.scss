@@ -44,7 +44,7 @@ input[type='button']:hover {
   width: 100%;
 
   min-height: 800px;
-  background: center url('/public/header-bg.png') no-repeat;
+  background: center url('./public/header-bg.png') no-repeat;
   background-size: 100%;
 
   header {
@@ -306,7 +306,7 @@ input[type='button']:hover {
 
 .table-reserve {
   position: relative;
-  background: url('/public/reserve-bg.png') no-repeat;
+  background: url('./public/reserve-bg.png') no-repeat;
   background-color: #000000;
   background-size: 100%;
 
