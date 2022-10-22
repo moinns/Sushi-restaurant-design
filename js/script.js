@@ -20,5 +20,6 @@ $(document).mouseup(function (e) {
   if (container.has(e.target).length === 0) {
     $('.my-burger').removeClass('active');
     $('._wrapper').removeClass('slide');
+    $('html').removeClass('lock');
   }
 });
