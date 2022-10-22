@@ -149,19 +149,29 @@
         </div>
       </div>
     </div>
-    <div
-      class="dishes"
-      uk-scrollspy="target: div; cls: uk-animation-slide-bottom-medium; delay: 300"
-    >
-      <h1>Наші <b>Страви</b></h1>
+    <div class="dishes">
+      <div uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300">
+        <h1>Наші <b>Страви</b></h1>
+      </div>
       <div class="dish-wrapper">
-        <img class="big-pgoto" src="./public/pizza.png" alt="" />
-        <div class="small-photos">
+        <img
+          uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300"
+          class="big-photo"
+          src="./public/pizza.png"
+          alt=""
+        />
+        <div
+          class="small-photos"
+          uk-scrollspy="target: img; cls: uk-animation-slide-bottom-medium; delay: 400"
+        >
           <img src="./public/burger.png" alt="" />
           <img src="./public/burger.png" alt="" />
           <img src="./public/burger.png" alt="" />
         </div>
-        <div class="prices">
+        <div
+          class="prices"
+          uk-scrollspy="target: li; cls: uk-animation-slide-bottom-medium; delay: 400"
+        >
           <ul>
             <li>
               <p>Міні Гамбургер</p>
