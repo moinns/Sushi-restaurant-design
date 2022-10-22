@@ -9,9 +9,12 @@ $text-color: #656363;
 .my-burger {
   z-index: 100;
 
+  right: 5%;
   display: none;
-  width: auto;
-  height: auto;
+  width: 30px;
+  height: 17px;
+
+  position: absolute;
 }
 
 .my-burger::after,
@@ -31,7 +34,7 @@ $text-color: #656363;
   background-color: $main-color;
   position: absolute;
   right: 5%;
-  top: 47.5%;
+  top: 43%;
   width: 30px;
   height: 3px;
   opacity: 1;
@@ -40,11 +43,11 @@ $text-color: #656363;
 }
 .my-burger::before {
   position: absolute;
-  top: 35%;
+  top: 0;
 }
 .my-burger::after {
   position: absolute;
-  bottom: 35%;
+  bottom: 0;
 }
 
 .my-burger.active span {
@@ -75,6 +78,10 @@ html {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
+}
+
+html.lock {
+  overflow: hidden;
 }
 
 input[type='button'] {
@@ -391,7 +398,8 @@ input[type='button']:hover {
     align-items: center;
 
     .text-wrap {
-      width: 600px;
+      max-width: 600px;
+      width: 100%;
       h1 {
         font-family: 'Tinos';
         font-style: normal;
@@ -432,6 +440,7 @@ input[type='button']:hover {
 }
 .dishes {
   min-height: 950px;
+  height: 120vh;
   max-width: 80%;
 
   margin: auto;
@@ -457,60 +466,73 @@ input[type='button']:hover {
 
   .dish-wrapper {
     display: flex;
-    .small-photos {
-      margin: 0 15px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    flex-direction: row !important;
+    img {
+      width: 500px;
     }
-    .prices {
+    .menu-wrapper {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      ul {
-        margin: 0;
-        list-style: none;
-        width: 700px;
+      flex-direction: row;
+      .small-photos {
+        margin: 0 15px;
+        width: fit-content;
 
-        li {
-          &:nth-child(2) {
-            margin: 125px 0;
-          }
+        display: flex;
+        flex-direction: column;
 
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+        justify-content: space-between;
+        img {
+          width: 170px;
+        }
+      }
+      .prices {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+          margin: 0;
+          list-style: none;
+          width: 700px;
 
-          white-space: nowrap;
+          li {
+            &:nth-child(2) {
+              margin: 150px 0;
+            }
 
-          font-family: 'Tinos';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 26px;
-          line-height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-          color: #000000;
+            white-space: nowrap;
 
-          p {
-            margin: 0;
-          }
+            font-family: 'Tinos';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 30px;
 
-          h2 {
-            position: relative;
+            color: #000000;
 
-            margin: 0;
-            width: min-content;
+            p {
+              margin: 0;
+            }
 
-            &::after {
-              left: -355px;
-              top: 20px;
-              position: absolute;
-              content: '';
-              display: block;
-              width: 300px;
-              height: 2px;
-              border: 1px dashed rgb(0, 0, 0);
+            h2 {
+              position: relative;
+
+              margin: 0;
+              width: min-content;
+
+              &::after {
+                left: -355px;
+                top: 20px;
+                position: absolute;
+                content: '';
+                display: block;
+                width: 300px;
+                height: 2px;
+                border: 1px dashed rgb(0, 0, 0);
+              }
             }
           }
         }
@@ -651,50 +673,72 @@ input[type='button']:hover {
     }
   }
   .table-reserve {
+    text-align: center;
     background-size: auto;
     .reserve-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
+      .text-wrap {
+        width: 100%;
+        h1 {
+          font-size: 32px;
+          line-height: 30px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+      input {
+        margin-top: -50px;
+      }
     }
   }
   .dishes {
     max-width: 100%;
     flex-direction: column;
+
     > img {
       width: 750px;
     }
     .dish-wrapper {
-      flex-direction: row;
+      flex-direction: row !important;
       width: 100%;
       justify-content: center;
-      .small-photos {
-        img {
-          min-width: 170px;
-          margin: 45px 0;
+      flex-wrap: wrap;
+      .menu-wrapper {
+        display: flex;
+        justify-content: center;
+        .small-photos {
+          width: fit-content;
+          img {
+            width: 170px;
+            margin: 45px 0;
+          }
         }
-      }
-      .prices {
-        ul {
-          width: 200px;
-          li {
-            display: flex;
-            flex-direction: column;
-            align-items: baseline;
-            p {
-              font-size: 22px;
-              line-height: 25px;
-            }
-            h2 {
-              text-align: left;
-              font-size: 26px;
-              line-height: 30px;
-              &::after {
-                display: none;
+        .prices {
+          ul {
+            width: 200px;
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: baseline;
+              p {
+                font-size: 22px;
+                line-height: 25px;
               }
-            }
-            &:nth-child(2) {
-              margin: 180px 0;
+              h2 {
+                text-align: left;
+                font-size: 26px;
+                line-height: 30px;
+                &::after {
+                  display: none;
+                }
+              }
+              &:nth-child(2) {
+                margin: 105% 0;
+              }
             }
           }
         }

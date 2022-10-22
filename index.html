@@ -121,21 +121,24 @@
           </div>
         </div>
       </div>
-      <div class="gallery">
+      <div
+        class="gallery"
+        uk-scrollspy="target: img; uk-animation-fade; delay: 300"
+      >
         <img
-          uk-scrollspy="cls: uk-animation-slide-left-medium, uk-animation-fade; delay: 900"
+          uk-scrollspy-class="uk-animation-slide-left-medium"
           class="img1"
           src="./public/img1.png"
           alt=""
         />
         <img
-          uk-scrollspy="cls: uk-animation-slide-top-medium, uk-animation-fade; ; delay: 1500"
+          uk-scrollspy-class="uk-animation-slide-top-medium"
           class="img2"
           src="./public/img2.png"
           alt=""
         />
         <img
-          uk-scrollspy="cls: uk-animation-slide-right-medium, uk-animation-fade; delay: 2100"
+          uk-scrollspy-class="uk-animation-slide-right-medium"
           class="img3"
           src="./public/img3.png"
           alt=""
@@ -160,39 +163,41 @@
       <div uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300">
         <h1>Наші <b>Страви</b></h1>
       </div>
-      <img
-        uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300"
-        class="big-photo"
-        src="./public/pizza.png"
-        alt=""
-      />
       <div class="dish-wrapper">
-        <div
-          class="small-photos"
-          uk-scrollspy="target: img; cls: uk-animation-slide-bottom-medium; delay: 400"
-        >
-          <img src="./public/burger.png" alt="" />
-          <img src="./public/burger.png" alt="" />
-          <img src="./public/burger.png" alt="" />
-        </div>
-        <div
-          class="prices"
-          uk-scrollspy="target: li; cls: uk-animation-slide-bottom-medium; delay: 400"
-        >
-          <ul>
-            <li>
-              <p>Міні Гамбургер</p>
-              <h2>99 грн</h2>
-            </li>
-            <li>
-              <p>Міні Гамбургер</p>
-              <h2>99 грн</h2>
-            </li>
-            <li>
-              <p>Міні Гамбургер</p>
-              <h2>99 грн</h2>
-            </li>
-          </ul>
+        <img
+          uk-scrollspy=" cls:uk-animation-slide-bottom-medium; delay: 300"
+          class="big-photo"
+          src="./public/pizza.png"
+          alt=""
+        />
+        <div class="menu-wrapper">
+          <div
+            class="small-photos"
+            uk-scrollspy="target: img; cls: uk-animation-slide-bottom-medium; delay: 400"
+          >
+            <img src="./public/burger.png" alt="" />
+            <img src="./public/burger.png" alt="" />
+            <img src="./public/burger.png" alt="" />
+          </div>
+          <div
+            class="prices"
+            uk-scrollspy="target: li; cls: uk-animation-slide-bottom-medium; delay: 400"
+          >
+            <ul>
+              <li>
+                <p>Міні Гамбургер</p>
+                <h2>99 грн</h2>
+              </li>
+              <li>
+                <p>Міні Гамбургер</p>
+                <h2>99 грн</h2>
+              </li>
+              <li>
+                <p>Міні Гамбургер</p>
+                <h2>99 грн</h2>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

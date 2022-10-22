@@ -9,9 +9,9 @@ $('.img2').hover(
   }
 );
 
-$('.my-burger').click(function (e) {
+$('.my-burger > *').click(function (e) {
   $('.my-burger').toggleClass('active');
-
+  $('html').toggleClass('lock');
   $('._wrapper').toggleClass('slide');
 });
 
